@@ -16,13 +16,13 @@ export function Navbar() {
         </div>
 
         <nav className="hidden gap-8 text-sm font-semibold text-zinc-300 md:flex">
-          <Link href="#">Home</Link>
-          <Link className="transition hover:text-amber-300" href="#">Notícias</Link>
-          <Link href="#">FAQ</Link>
-          <Link href="#">Classes</Link>
-          <Link href="#">Download</Link>
-          <Link href="#">Loja</Link>
-          <Link href="#">Cadastro</Link>
+          <Link className="transition hover:text-amber-300" href="#">Home</Link>
+          <Link className="transition hover:text-amber-300" href="/news">Notícias</Link>
+          <Link className="transition hover:text-amber-300" href="/faq">FAQ</Link>
+          <Link className="transition hover:text-amber-300" href="#">Classes</Link>
+          <Link className="transition hover:text-amber-300" href="/download">Download</Link>
+          <Link className="transition hover:text-amber-300" href="/shop">Loja</Link>
+          <Link className="transition hover:text-amber-300" href="/register">Cadastro</Link>
         </nav>
 
         <button className="rounded-xl bg-amber-400 px-5 py-2 font-bold text-black transition hover:bg-amber-300">
