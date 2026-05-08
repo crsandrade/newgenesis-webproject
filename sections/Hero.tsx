@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
       
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-[url('/images/backgrounds/hero-bg.png')] bg-cover bg-center opacity-20" />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-[#09090b]" />
 
