@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black px-6 py-12">
@@ -14,27 +16,27 @@ export function Footer() {
         </div>
 
         <nav className="flex flex-wrap gap-5 text-sm font-semibold text-zinc-400">
-          <a className="transition hover:text-amber-300" href="#">
+          <Link className="transition hover:text-amber-300" href="#">
             Home
-          </a>
-          <a className="transition hover:text-amber-300" href="#">
+          </Link>
+          <Link className="transition hover:text-amber-300" href="#">
             Notícias
-          </a>
-          <a className="transition hover:text-amber-300" href="#">
+          </Link>
+          <Link className="transition hover:text-amber-300" href="#">
             FAQ
-          </a>
-          <a className="transition hover:text-amber-300" href="#classes">
+          </Link>
+          <Link className="transition hover:text-amber-300" href="#classes">
             Classes
-          </a>
-          <a className="transition hover:text-amber-300" href="#">
+          </Link>
+          <Link className="transition hover:text-amber-300" href="#">
             Download
-          </a>
-          <a className="transition hover:text-amber-300" href="#">
+          </Link>
+          <Link className="transition hover:text-amber-300" href="#">
             Loja
-          </a>
-          <a className="transition hover:text-amber-300" href="#">
+          </Link>
+          <Link className="transition hover:text-amber-300" href="#">
             Cadastro
-          </a>
+          </Link>
         </nav>
       </div>
 

@@ -17,7 +17,7 @@ export function Navbar() {
 
         <nav className="hidden gap-8 text-sm font-semibold text-zinc-300 md:flex">
           <Link href="#">Home</Link>
-          <Link href="#">Notícias</Link>
+          <Link className="transition hover:text-amber-300" href="#">Notícias</Link>
           <Link href="#">FAQ</Link>
           <Link href="#">Classes</Link>
           <Link href="#">Download</Link>
