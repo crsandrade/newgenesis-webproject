@@ -3,5 +3,6 @@ export interface GameClass {
   name: string;
   role: string;
   difficulty: string;
+  image: string;
   description: string;
 }

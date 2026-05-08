@@ -1,41 +1,12 @@
 import type { Metadata } from "next";
 import { Card } from "@/components/Card";
+import Image from "next/image";
+import { classes } from "@/data/classes";
 
-export const metadata: Metadata = { 
+export const metadata: Metadata = {
   title: "Classes | New Genesis",
   description: "Descubra a melhor classe pro seu estilo de jogo no New Genesis."
 }
-
-const classes = [
-  {
-    name: "TransKnight",
-    role: "Tanque / Corpo a corpo",
-    difficulty: "Difícil",
-    description:
-      "Um combatente disciplinado, que jurou proteger os mais fracos.",
-  },
-  {
-    name: "BeastMaster",
-    role: "Tanque / Utilidade",
-    difficulty: "Fácil",
-    description:
-      "Guerreiro da natureza, pode evocar espíritos para ajuda-lo.",
-  },
-  {
-    name: "Foema",
-    role: "Suporte / Magia",
-    difficulty: "Fácil",
-    description:
-      "Estudante das artes divinas da magia.",
-  },
-   {
-    name: "Huntress",
-    role: "Ataque Explosivo / Distância",
-    difficulty: "Médio",
-    description:
-      "Perseguidora esguia com alta capacidade de sobrevivência.",
-  },
-];
 
 export default function ClassesPage() {
   return (
@@ -55,8 +26,15 @@ export default function ClassesPage() {
           {classes.map((item) => (
             <Card key={item.name}>
               <p className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:-translate-y-2 hover:border-amber-300/40"
-            > </p>
-              <div className="mb-6 h-48 rounded-2xl border border-white/10 bg-gradient-to-br from-amber-400/20 to-black" />
+              > </p>
+              <div className="relative mb-6 h-48 overflow-hidden rounded-2xl border border-white/10">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-amber-300">
                 {item.role}
