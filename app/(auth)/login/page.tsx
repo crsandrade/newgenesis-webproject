@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FormInput } from "@/components/FormInput";
+import { PrimaryButton } from "@/components/PrimaryButton";
 
 export default function LoginPage() {
   return (
@@ -11,21 +13,21 @@ export default function LoginPage() {
         <h1 className="text-4xl font-black">Acesse sua conta</h1>
 
         <form className="mt-10 space-y-5">
-          <input
+          <FormInput
             type="email"
+            name="email"
             placeholder="E-mail"
-            className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-amber-300"
           />
 
-          <input
+          <FormInput
             type="password"
+            name="password"
             placeholder="Senha"
-            className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-amber-300"
           />
 
-          <button className="w-full rounded-xl bg-amber-400 py-4 font-black text-black transition hover:bg-amber-300">
+          <PrimaryButton>
             Entrar
-          </button>
+          </PrimaryButton>
         </form>
 
         <p className="mt-6 text-center text-sm text-zinc-400">
