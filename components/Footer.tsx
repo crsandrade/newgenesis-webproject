@@ -19,22 +19,22 @@ export function Footer() {
           <Link className="transition hover:text-amber-300" href="#">
             Home
           </Link>
-          <Link className="transition hover:text-amber-300" href="#">
+          <Link className="transition hover:text-amber-300" href="/news">
             Notícias
           </Link>
-          <Link className="transition hover:text-amber-300" href="#">
+          <Link className="transition hover:text-amber-300" href="/faq">
             FAQ
           </Link>
-          <Link className="transition hover:text-amber-300" href="#classes">
+          <Link className="transition hover:text-amber-300" href="/classes">
             Classes
           </Link>
-          <Link className="transition hover:text-amber-300" href="#">
+          <Link className="transition hover:text-amber-300" href="/download">
             Download
           </Link>
-          <Link className="transition hover:text-amber-300" href="#">
+          <Link className="transition hover:text-amber-300" href="/shop">
             Loja
           </Link>
-          <Link className="transition hover:text-amber-300" href="#">
+          <Link className="transition hover:text-amber-300" href="/register">
             Cadastro
           </Link>
         </nav>
