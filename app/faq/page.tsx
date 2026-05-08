@@ -18,7 +18,7 @@ const faq = [
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-[#09090b] px-6 py-32 text-white">
+    <main className="min-h-screen bg-[#09090b] px-6 pt-32 pb-20 text-white">
       <div className="mx-auto max-w-5xl">
         
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.4em] text-amber-300">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Navbar() {
   return (
     <header className="w-full border-b border-white/10">
@@ -14,13 +16,13 @@ export function Navbar() {
         </div>
 
         <nav className="hidden gap-8 text-sm font-semibold text-zinc-300 md:flex">
-          <a href="#">Home</a>
-          <a href="#">Notícias</a>
-          <a href="#">FAQ</a>
-          <a href="#">Classes</a>
-          <a href="#">Download</a>
-          <a href="#">Loja</a>
-          <a href="#">Cadastro</a>
+          <Link href="#">Home</Link>
+          <Link href="#">Notícias</Link>
+          <Link href="#">FAQ</Link>
+          <Link href="#">Classes</Link>
+          <Link href="#">Download</Link>
+          <Link href="#">Loja</Link>
+          <Link href="#">Cadastro</Link>
         </nav>
 
         <button className="rounded-xl bg-amber-400 px-5 py-2 font-bold text-black transition hover:bg-amber-300">
