@@ -1,4 +1,5 @@
-import { Link } from "lucide-react";
+import { navigationLinks } from "@/constants/navigation";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -15,35 +16,15 @@ export function Footer() {
           </p>
         </div>
 
-        <nav className="flex flex-wrap gap-5 text-sm font-semibold text-zinc-400">
-          <Link className="transition hover:text-amber-300" href="/">
-            Home
+        {navigationLinks.map((link) => (
+          <Link
+            key={link.href}
+            className="transition hover:text-amber-300"
+            href={link.href}
+          >
+            {link.label}
           </Link>
-          <Link className="transition hover:text-amber-300" href="/news">
-            Notícias
-          </Link>
-          <Link className="transition hover:text-amber-300" href="/rankings">
-          Rankings
-          </Link>
-          <Link className="transition hover:text-amber-300" href="/guilds">
-            Guilds
-          </Link>
-          <Link className="transition hover:text-amber-300" href="/faq">
-            FAQ
-          </Link>
-          <Link className="transition hover:text-amber-300" href="/classes">
-            Classes
-          </Link>
-          <Link className="transition hover:text-amber-300" href="/download">
-            Download
-          </Link>
-          <Link className="transition hover:text-amber-300" href="/shop">
-            Loja
-          </Link>
-          <Link className="transition hover:text-amber-300" href="/register">
-            Cadastro
-          </Link>
-        </nav>
+        ))}
       </div>
 
       <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-zinc-600">
