@@ -4,23 +4,29 @@ export const guilds = [
     name: "Fenrir",
     leader: "Aethelwolf",
     members: 48,
-    faction: "Nórdicos",
+    kingdom: "Norsgard",
     power: 9820,
+    description:
+      "Uma guild nórdica conhecida pela força brutal, guerras territoriais e domínio das regiões congeladas.",
   },
   {
     id: "legion",
     name: "Legion",
     leader: "Valerius",
     members: 42,
-    faction: "Império Romano",
+    kingdom: "Valkyra",
     power: 9340,
+    description:
+      "Uma guild imperial disciplinada, focada em estratégia, organização militar e controle político.",
   },
   {
     id: "eclipse",
     name: "Eclipse",
     leader: "Nyx",
     members: 37,
-    faction: "Ordem Rúnica",
+    kingdom: "Valkyra",
     power: 8890,
+    description:
+      "Uma guild mística formada por estudiosos de runas, magos e combatentes ligados ao oculto.",
   },
 ];

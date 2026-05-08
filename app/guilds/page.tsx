@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-
 import { guilds } from "@/data/guilds";
 
 export const metadata: Metadata = {
@@ -29,7 +28,7 @@ export default function GuildsPage() {
               className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:-translate-y-2 hover:border-amber-300/40"
             >
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-amber-300">
-                {guild.faction}
+                {guild.kingdom}
               </p>
 
               <h2 className="mt-4 text-3xl font-black">{guild.name}</h2>
