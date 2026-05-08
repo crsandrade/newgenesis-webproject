@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { news } from "@/data/news";
+import { formatDate } from "@/lib/format-date";
 
 export const metadata: Metadata = {
   title: "Notícias | New Genesis",
@@ -35,7 +36,7 @@ export default function NewsPage() {
 
               <h2 className="mt-4 text-2xl font-black">{item.title}</h2>
 
-              <p className="mt-2 text-sm text-zinc-500">{item.date}</p>
+              <p className="mt-2 text-sm text-zinc-500">{formatDate(item.date)}</p>
 
               <p className="mt-5 leading-7 text-zinc-400">
                 {item.description}

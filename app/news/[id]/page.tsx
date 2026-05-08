@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { news } from "@/data/news";
+import { formatDate } from "@/lib/format-date";
 
 interface NewsDetailsPageProps {
   params: Promise<{
@@ -28,7 +29,7 @@ export default async function NewsDetailsPage({
 
         <h1 className="text-5xl font-black">{article.title}</h1>
 
-        <p className="mt-4 text-sm text-zinc-500">{article.date}</p>
+        <p className="mt-4 text-sm text-zinc-500">{formatDate(article.date)}</p>
 
         <p className="mt-10 text-lg leading-8 text-zinc-300">
           {article.description}

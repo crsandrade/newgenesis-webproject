@@ -1,10 +1,12 @@
-export const guilds = [
+import type { Guild } from "@/types/guild";
+
+export const guilds: Guild[] = [
   {
     id: "fenrir",
     name: "Fenrir",
     leader: "Aethelwolf",
     members: 48,
-    kingdom: "Norsgard",
+    kingdom: "Akelonia",
     power: 9820,
     description:
       "Uma guild nórdica conhecida pela força brutal, guerras territoriais e domínio das regiões congeladas.",
@@ -14,7 +16,7 @@ export const guilds = [
     name: "Legion",
     leader: "Valerius",
     members: 42,
-    kingdom: "Valkyra",
+    kingdom: "Hekalotia",
     power: 9340,
     description:
       "Uma guild imperial disciplinada, focada em estratégia, organização militar e controle político.",
@@ -24,7 +26,7 @@ export const guilds = [
     name: "Eclipse",
     leader: "Nyx",
     members: 37,
-    kingdom: "Valkyra",
+    kingdom: "Akelonia",
     power: 8890,
     description:
       "Uma guild mística formada por estudiosos de runas, magos e combatentes ligados ao oculto.",
