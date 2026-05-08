@@ -1,3 +1,8 @@
+import { Container } from "@/components/Container";
+import { PrimaryButton } from "@/components/PrimaryButton";
+import { SecondaryButton } from "@/components/SecondaryButton";
+
+
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
@@ -6,6 +11,7 @@ export function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-[#09090b]" />
 
+      <Container>
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.5em] text-amber-300">
@@ -23,15 +29,16 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex gap-4">
-          <button className="rounded-2xl bg-amber-400 px-8 py-4 font-black uppercase tracking-wider text-black transition hover:scale-105 hover:bg-amber-300">
+          <PrimaryButton>
             Criar Conta
-          </button>
+          </PrimaryButton>
 
-          <button className="rounded-2xl border border-white/20 bg-white/5 px-8 py-4 font-black uppercase tracking-wider text-white backdrop-blur-sm transition hover:bg-white/10">
+          <SecondaryButton>
             Download
-          </button>
+          </SecondaryButton>
         </div>
       </div>
+      </Container>
     </section>
   );
 }
