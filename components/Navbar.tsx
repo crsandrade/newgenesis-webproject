@@ -18,6 +18,7 @@ export function Navbar() {
         <nav className="hidden gap-8 text-sm font-semibold text-zinc-300 md:flex">
           <Link className="transition hover:text-amber-300" href="/">Home</Link>
           <Link className="transition hover:text-amber-300" href="/news">Notícias</Link>
+          <Link className="transition hover:text-amber-300" href="/rankings">Rankings</Link>
           <Link className="transition hover:text-amber-300" href="/faq">FAQ</Link>
           <Link className="transition hover:text-amber-300" href="/classes">Classes</Link>
           <Link className="transition hover:text-amber-300" href="/download">Download</Link>

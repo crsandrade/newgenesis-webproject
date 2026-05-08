@@ -22,6 +22,9 @@ export function Footer() {
           <Link className="transition hover:text-amber-300" href="/news">
             Notícias
           </Link>
+          <Link className="transition hover:text-amber-300" href="/rankings">
+          Rankings
+          </Link>
           <Link className="transition hover:text-amber-300" href="/faq">
             FAQ
           </Link>
