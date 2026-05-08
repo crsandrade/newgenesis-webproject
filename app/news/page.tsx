@@ -1,33 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { news } from "@/data/news";
 
-export const metadata: Metadata = { 
+export const metadata: Metadata = {
   title: "Notícias | New Genesis",
   description: "Notícias New Genesis - Saiba sobre tudo que acontece no jogo."
 }
 
-const news = [
-  {
-    title: "Closed Beta anunciado",
-    category: "Atualização",
-    date: "08 Maio 2026",
-    description:
-      "Os primeiros aventureiros serão convocados para explorar o continente de New Genesis.",
-  },
-  {
-    title: "Sistema de Guildas",
-    category: "Sistema",
-    date: "08 Maio 2026",
-    description:
-      "Construa alianças, dispute territórios e participe de guerras entre facções.",
-  },
-  {
-    title: "Expansão do Norte",
-    category: "Conteúdo",
-    date: "08 Maio 2026",
-    description:
-      "Novas regiões congeladas, criaturas ancestrais e desafios inéditos chegarão em breve.",
-  },
-];
 
 export default function NewsPage() {
   return (
@@ -62,9 +41,12 @@ export default function NewsPage() {
                 {item.description}
               </p>
 
-              <button className="mt-8 font-bold text-amber-300">
+              <Link
+                className="mt-8 inline-block font-bold text-amber-300"
+                href={`/news/${item.id}`}
+              >
                 Ler mais →
-              </button>
+              </Link>
             </article>
           ))}
         </div>
