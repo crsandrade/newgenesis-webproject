@@ -16,7 +16,7 @@ export function Footer() {
         </div>
 
         <nav className="flex flex-wrap gap-5 text-sm font-semibold text-zinc-400">
-          <Link className="transition hover:text-amber-300" href="#">
+          <Link className="transition hover:text-amber-300" href="/">
             Home
           </Link>
           <Link className="transition hover:text-amber-300" href="/news">

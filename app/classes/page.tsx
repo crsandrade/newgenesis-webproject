@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { 
+  title: "Classes | New Genesis",
+  description: "Descubra a melhor classe pro seu estilo de jogo no New Genesis."
+}
+
 const classes = [
   {
     name: "TransKnight",

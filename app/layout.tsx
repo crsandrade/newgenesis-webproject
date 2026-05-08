@@ -5,8 +5,22 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "New Genesis",
-  description: "Nordic Roman Fantasy MMORPG",
+  title: {
+    default: "New Genesis",
+    template: "%s | New Genesis",
+  },
+
+  description:
+    "O seu futuro escrito por você.",
+
+  keywords: [
+    "MMORPG",
+    "WYD Genesis",
+    "Nordic",
+    "WYD",
+    "Online Game",
+    "New Genesis",
+  ],
 };
 
 export default function RootLayout({

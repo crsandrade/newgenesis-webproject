@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { 
+  title: "Notícias | New Genesis",
+  description: "Notícias New Genesis - Saiba sobre tudo que acontece no jogo."
+}
+
 const news = [
   {
     title: "Closed Beta anunciado",

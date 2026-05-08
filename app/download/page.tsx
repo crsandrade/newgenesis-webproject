@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { 
+  title: "Download | New Genesis",
+  description: "Download oficial do launcher New Genesis"
+}
+
 export default function DownloadPage() {
   return (
     <main className="min-h-screen bg-[#09090b] px-6 pt-32 pb-20 text-white">

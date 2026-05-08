@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { 
+  title: "Registro | New Genesis",
+  description: "Cadastre-se e comece a escrever o seu futuro."
+}
+
 export default function RegisterPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#09090b] px-6 pt-32 pb-20 text-white">

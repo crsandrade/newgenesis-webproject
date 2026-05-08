@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = { 
+  title: "FAQ | New Genesis",
+  description: "FAQ New Genesis - Retire suas dúvidas"
+}
+
 const faq = [
   {
     question: "New Genesis será gratuito?",
