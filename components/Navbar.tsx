@@ -1,5 +1,6 @@
 import { navigationLinks } from "@/constants/navigation";
 import Link from "next/link";
+import { NavLink } from "@/components/NavLink";
 
 export function Navbar() {
   return (
@@ -17,13 +18,12 @@ export function Navbar() {
         </div>
 
         {navigationLinks.map((link) => (
-          <Link
+          <NavLink
             key={link.href}
-            className="transition hover:text-amber-300"
             href={link.href}
           >
             {link.label}
-          </Link>
+          </NavLink>
         ))}
 
         <button className="rounded-xl bg-amber-400 px-5 py-2 font-bold text-black transition hover:bg-amber-300">
