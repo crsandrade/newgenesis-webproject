@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FormInput } from "@/components/FormInput";
-import { PrimaryButton } from "@/components/PrimaryButton";
+import { SubmitButton } from "@/components/SubmitButton";
 
 export default function LoginPage() {
   return (
@@ -25,9 +25,8 @@ export default function LoginPage() {
             placeholder="Senha"
           />
 
-          <PrimaryButton>
-            Entrar
-          </PrimaryButton>
+         <SubmitButton>Entrar</SubmitButton>
+
         </form>
 
         <p className="mt-6 text-center text-sm text-zinc-400">

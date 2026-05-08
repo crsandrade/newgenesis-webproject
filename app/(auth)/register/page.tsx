@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FormInput } from "@/components/FormInput";
-import { PrimaryButton } from "@/components/PrimaryButton";
+import { SubmitButton } from "@/components/SubmitButton";
 
 export const metadata: Metadata = { 
   title: "Registro | New Genesis",
@@ -40,9 +40,9 @@ export default function RegisterPage() {
             placeholder="Senha"
           />
 
-          <PrimaryButton>
+          <SubmitButton>
             Criar Conta
-          </PrimaryButton>
+          </SubmitButton>
         </form>
       </div>
     </main>
