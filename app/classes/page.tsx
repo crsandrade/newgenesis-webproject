@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Card } from "@/components/Card";
 
 export const metadata: Metadata = { 
   title: "Classes | New Genesis",
@@ -52,10 +53,9 @@ export default function ClassesPage() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {classes.map((item) => (
-            <article
-              key={item.name}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:-translate-y-2 hover:border-amber-300/40"
-            >
+            <Card key={item.name}>
+              <p className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:-translate-y-2 hover:border-amber-300/40"
+            > </p>
               <div className="mb-6 h-48 rounded-2xl border border-white/10 bg-gradient-to-br from-amber-400/20 to-black" />
 
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-amber-300">
@@ -71,7 +71,7 @@ export default function ClassesPage() {
               <p className="mt-5 leading-7 text-zinc-400">
                 {item.description}
               </p>
-            </article>
+            </Card>
           ))}
         </div>
       </div>

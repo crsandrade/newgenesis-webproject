@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { news } from "@/data/news";
 import { formatDate } from "@/lib/format-date";
+import { Card } from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "Notícias | New Genesis",
@@ -26,10 +27,9 @@ export default function NewsPage() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {news.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:-translate-y-2 hover:border-amber-300/40"
-            >
+            <Card key={item.title}>
+              <p className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:-translate-y-2 hover:border-amber-300/40" >
+              </p>
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-amber-300">
                 {item.category}
               </p>
@@ -48,7 +48,7 @@ export default function NewsPage() {
               >
                 Ler mais →
               </Link>
-            </article>
+            </Card>
           ))}
         </div>
       </div>
