@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { FormInput } from "@/components/FormInput";
 import { SubmitButton } from "@/components/SubmitButton";
+import { registerUser } from "@/actions/register";
 
 export function RegisterForm() {
   const [username, setUsername] = useState("");
@@ -11,7 +12,7 @@ export function RegisterForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     setError("");
@@ -26,11 +27,13 @@ export function RegisterForm() {
       return;
     }
 
-    console.log({
+    const response = await registerUser({
       username,
       email,
       password,
     });
+
+    console.log(response);
   }
 
   return (
