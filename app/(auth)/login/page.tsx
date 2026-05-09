@@ -1,58 +1,11 @@
-"use client";
+import type { Metadata } from "next";
 
-import { useState } from "react";
+import { LoginForm } from "./LoginForm";
 
-import Link from "next/link";
-import { FormInput } from "@/components/FormInput";
-import { SubmitButton } from "@/components/SubmitButton";
+export const metadata: Metadata = {
+  title: "Login",
+};
 
 export default function LoginPage() {
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault();
-
-        console.log({
-            email,
-            password,
-        });
-    }
-
-    return (
-        <main className="flex min-h-screen items-center justify-center px-6">
-            <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.03] p-10">
-                <p className="mb-3 text-sm font-bold uppercase tracking-[0.4em] text-amber-300">
-                    Login
-                </p>
-
-                <h1 className="text-4xl font-black">Acesse sua conta</h1>
-
-                <form onSubmit={handleSubmit} className="mt-10 space-y-5">
-                    <FormInput
-                        type="email"
-                        name="email"
-                        placeholder="E-mail"
-                    />
-
-                    <FormInput
-                        type="password"
-                        name="password"
-                        placeholder="Senha"
-                    />
-
-                    <SubmitButton>Entrar</SubmitButton>
-
-                </form>
-
-                <p className="mt-6 text-center text-sm text-zinc-400">
-                    Ainda não tem conta?{" "}
-                    <Link className="font-bold text-amber-300" href="/register">
-                        Cadastre-se
-                    </Link>
-                </p>
-            </div>
-        </main>
-    );
+  return <LoginForm />;
 }
