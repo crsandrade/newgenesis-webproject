@@ -9,9 +9,22 @@ export function RegisterForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    setError("");
+
+    if (!username || !email || !password) {
+      setError("Preencha todos os campos.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("A senha precisa ter pelo menos 6 caracteres.");
+      return;
+    }
 
     console.log({
       username,
@@ -72,6 +85,14 @@ export function RegisterForm() {
             Criar Conta
           </SubmitButton>
         </form>
+
+        {error && (
+          <p className="mt-4 text-sm font-semibold text-red-400">
+            {error}
+          </p>
+        )}
+
+
       </div>
     </main>
   );
