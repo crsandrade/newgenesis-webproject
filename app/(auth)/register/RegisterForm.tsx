@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FormInput } from "@/components/FormInput";
 import { SubmitButton } from "@/components/SubmitButton";
 import { registerUser } from "@/actions/register";
+import { createClient } from "@/lib/supabase/client";
 
 export function RegisterForm() {
   const [username, setUsername] = useState("");
@@ -34,6 +35,26 @@ export function RegisterForm() {
     });
 
     console.log(response);
+
+    const supabase = createClient();
+
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          username,
+        },
+      },
+    });
+
+    if (error) {
+      setError(error.message);
+      return;
+    }
+
+    setError("");
+    alert("Cadastro realizado! Verifique seu e-mail para confirmar a conta.");
   }
 
   return (
