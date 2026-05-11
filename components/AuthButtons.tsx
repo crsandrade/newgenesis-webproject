@@ -29,8 +29,23 @@ export async function AuthButtons() {
     );
   }
 
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .single();
+
   return (
     <div className="flex items-center gap-4">
+      {profile?.role === "admin" && (
+        <Link
+          href="/admin"
+          className="text-red-400 transition hover:text-red-300"
+        >
+          Admin
+        </Link>
+      )}
+
       <Link
         href="/account"
         className="transition hover:text-amber-300"
