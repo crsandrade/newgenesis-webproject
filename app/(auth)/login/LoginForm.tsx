@@ -5,13 +5,14 @@ import Link from "next/link";
 
 import { FormInput } from "@/components/FormInput";
 import { SubmitButton } from "@/components/SubmitButton";
+import { createClient } from "@/lib/supabase/client";
 
 export function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         setError("");
@@ -25,6 +26,21 @@ export function LoginForm() {
             email,
             password,
         });
+
+        const supabase = createClient();
+
+        const { error } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+        });
+
+        if (error) {
+            setError("E-mail ou senha inválidos.");
+            return;
+        }
+
+        setError("");
+        alert("Login realizado com sucesso!");
     }
 
     return (
