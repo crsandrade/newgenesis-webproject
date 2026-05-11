@@ -28,17 +28,9 @@ export function RegisterForm() {
       return;
     }
 
-    const response = await registerUser({
-      username,
-      email,
-      password,
-    });
-
-    console.log(response);
-
     const supabase = createClient();
 
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -50,6 +42,26 @@ export function RegisterForm() {
 
     if (error) {
       setError(error.message);
+      return;
+    }
+
+    const user = data.user;
+
+    if (!user) {
+      setError("Erro ao criar usuário.");
+      return;
+    }
+
+    const { error: profileError } = await supabase
+      .from("profiles")
+      .insert({
+        id: user.id,
+        username,
+        email,
+      });
+
+    if (profileError) {
+      setError(profileError.message);
       return;
     }
 
