@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 import { FormInput } from "@/components/FormInput";
@@ -11,6 +12,7 @@ export function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const router = useRouter();
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -40,7 +42,7 @@ export function LoginForm() {
         }
 
         setError("");
-        alert("Login realizado com sucesso!");
+        router.push("/account");
     }
 
     return (
