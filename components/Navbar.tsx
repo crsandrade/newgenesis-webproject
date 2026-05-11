@@ -1,6 +1,7 @@
 import { navigationLinks } from "@/constants/navigation";
 import Link from "next/link";
 import { NavLink } from "@/components/NavLink";
+import { AuthButtons } from "@/components/AuthButtons";
 
 export function Navbar() {
   return (
@@ -26,9 +27,7 @@ export function Navbar() {
           </NavLink>
         ))}
 
-        <button className="rounded-xl bg-amber-400 px-5 py-2 font-bold text-black transition hover:bg-amber-300">
-          Jogar Agora
-        </button>
+        <AuthButtons />
       </div>
     </header>
   );

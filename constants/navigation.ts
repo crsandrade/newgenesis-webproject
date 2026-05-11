@@ -32,14 +32,6 @@ export const navigationLinks = [
         href: "/shop",
     },
     {
-        label: "Cadastro",
-        href: "/register",
-    },
-    {
-        label: "Login",
-        href: "/login",
-    },
-    {
         label: "Cash Shop",
         href: "/cash-shop",
     },
