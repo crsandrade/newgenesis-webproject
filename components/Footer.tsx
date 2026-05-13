@@ -1,35 +1,41 @@
-import { navigationLinks } from "@/constants/navigation";
 import Link from "next/link";
+
+import { Container } from "@/components/Container";
+import { navigationLinks } from "@/constants/navigation";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black px-6 py-12">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
-        <div>
-          <h2 className="text-2xl font-black tracking-[0.3em] text-amber-300">
-            NEW GENESIS
-          </h2>
+    <footer className="border-t border-white/10 bg-black py-12">
+      <Container>
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-md">
+            <h2 className="text-2xl font-black tracking-[0.3em] text-amber-300">
+              NEW GENESIS
+            </h2>
 
-          <p className="mt-3 max-w-md text-sm leading-6 text-zinc-500">
-            MMORPG fantasy inspirado em mitologia nórdica, impérios antigos e
-            escolhas que moldam o destino do jogador.
-          </p>
+            <p className="mt-4 text-sm leading-7 text-zinc-500">
+              Onde a nostalgia se encontra
+              com a modernidade.
+            </p>
+          </div>
+
+          <nav className="flex flex-wrap gap-4 text-sm font-semibold text-zinc-400">
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition hover:text-amber-300"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
 
-        {navigationLinks.map((link) => (
-          <Link
-            key={link.href}
-            className="transition hover:text-amber-300"
-            href={link.href}
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
-
-      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-zinc-600">
-        © 2026 New Genesis. Todos os direitos reservados.
-      </div>
+        <div className="mt-10 border-t border-white/10 pt-6 text-sm text-zinc-600">
+          © 2026 New Genesis. Todos os direitos reservados.
+        </div>
+      </Container>
     </footer>
   );
 }

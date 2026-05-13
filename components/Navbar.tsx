@@ -11,21 +11,17 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Link href="/">
-          <div>
-            <h1 className="text-xl font-black tracking-[0.25em] text-amber-300 md:text-2xl md:tracking-[0.3em]">
-              NEW GENESIS
-            </h1>
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+        <Link href="/" onClick={() => setIsOpen(false)} className="shrink-0">
+          <h1 className="text-lg font-black tracking-[0.18em] text-amber-300 sm:text-xl md:text-2xl md:tracking-[0.3em]">
+            NEW GENESIS
+          </h1>
 
-            <p className="hidden text-[10px] uppercase tracking-[0.4em] text-zinc-400 sm:block">
-              Nordic Roman Fantasy MMORPG
-            </p>
-          </div>
+         
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-semibold text-zinc-300 lg:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 text-xs font-semibold text-zinc-300 xl:flex xl:gap-6 xl:text-sm">
           {navigationLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>
               {link.label}
@@ -33,42 +29,42 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <Link
-            href="/login"
-            className="transition hover:text-amber-300"
-          >
+        <div className="hidden shrink-0 items-center gap-4 xl:flex">
+          <Link href="/login" className="text-sm transition hover:text-amber-300">
             Login
           </Link>
 
           <Link
             href="/register"
-            className="rounded-xl bg-amber-400 px-5 py-3 font-bold text-black transition hover:bg-amber-300"
+            className="rounded-xl bg-amber-400 px-4 py-2.5 text-sm font-bold text-black transition hover:bg-amber-300"
           >
             Jogue Agora
           </Link>
         </div>
 
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="rounded-xl border border-white/10 bg-white/5 p-2 text-white lg:hidden"
+          type="button"
+          onClick={() => setIsOpen((current) => !current)}
+          className="shrink-0 rounded-xl border border-white/10 bg-white/5 p-2 text-white xl:hidden"
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
         >
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-black/95 px-6 py-6 lg:hidden">
-          <nav className="flex flex-col gap-5 text-sm font-semibold text-zinc-300">
+        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-white/10 bg-black/95 px-4 py-6 xl:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-5 text-sm font-semibold text-zinc-300">
             {navigationLinks.map((link) => (
-              <NavLink key={link.href} href={link.href}>
-                {link.label}
-              </NavLink>
+              <div key={link.href} onClick={() => setIsOpen(false)}>
+                <NavLink href={link.href}>{link.label}</NavLink>
+              </div>
             ))}
 
             <div className="flex flex-col gap-4 border-t border-white/10 pt-5">
               <Link
                 href="/login"
+                onClick={() => setIsOpen(false)}
                 className="transition hover:text-amber-300"
               >
                 Login
@@ -76,6 +72,7 @@ export function Navbar() {
 
               <Link
                 href="/register"
+                onClick={() => setIsOpen(false)}
                 className="rounded-xl bg-amber-400 px-5 py-3 text-center font-bold text-black transition hover:bg-amber-300"
               >
                 Jogue Agora
