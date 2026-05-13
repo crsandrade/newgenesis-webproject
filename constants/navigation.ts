@@ -28,7 +28,7 @@ export const navigationLinks = [
         href: "/download",
     },
     {
-        label: "Cash Shop",
+        label: "Loja",
         href: "/cash-shop",
     },
 ];

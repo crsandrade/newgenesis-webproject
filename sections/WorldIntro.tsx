@@ -1,18 +1,18 @@
 const features = [
   {
-    title: "Impérios em Guerra",
+    title: "Guerra entre Reinos",
     description:
-      "A ordem romana encontra a brutalidade nórdica em um continente dividido por honra, conquista e poder.",
+      "O balanço entre os reinos está afetado, as batalhas pela dominação de Kersef exigem coragem, mas somente um será o vencedor.",
   },
   {
-    title: "Runas Ancestrais",
+    title: "Guerras de Torre",
     description:
-      "Magias esquecidas despertam novamente, permitindo que heróis moldem batalhas e destinos.",
+      "O direito de declarar guerra é destinado somente aos maiores guerreiros.",
   },
   {
-    title: "Seu Caminho",
+    title: "Guerra de Castelo",
     description:
-      "Escolha sua classe, construa sua história e escreva seu nome entre as lendas de New Genesis.",
+      "A dominação absoluta envolve mais do que fazer um cerco perfeito, exige a captura do coração de Kersef.",
   },
 ];
 
