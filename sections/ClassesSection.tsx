@@ -44,7 +44,7 @@ export function ClassesSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-4">
           {classes.map((item) => (
             <article
               key={item.name}
