@@ -29,15 +29,8 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-4 xl:flex">
+        <div className="rounded-xl bg-amber-400 px-5 py-3 text-center font-bold text-black transition hover:bg-amber-300">
           <Link href="/login" className="text-sm transition hover:text-amber-300">
-            Login
-          </Link>
-
-          <Link
-            href="/register"
-            className="rounded-xl bg-amber-400 px-4 py-2.5 text-sm font-bold text-black transition hover:bg-amber-300"
-          >
             Jogue Agora
           </Link>
         </div>
@@ -65,15 +58,7 @@ export function Navbar() {
               <Link
                 href="/login"
                 onClick={() => setIsOpen(false)}
-                className="transition hover:text-amber-300"
-              >
-                Login
-              </Link>
-
-              <Link
-                href="/register"
-                onClick={() => setIsOpen(false)}
-                className="rounded-xl bg-amber-400 px-5 py-3 text-center font-bold text-black transition hover:bg-amber-300"
+                 className="rounded-xl bg-amber-400 px-5 py-3 text-center font-bold text-black transition hover:bg-amber-300"
               >
                 Jogue Agora
               </Link>
