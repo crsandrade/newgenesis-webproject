@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { CreateNewsForm } from "./CreateNewsForm";
+
 
 export const metadata: Metadata = {
   title: "Criar Notícia",
@@ -14,9 +16,7 @@ export default function CreateNewsPage() {
 
         <h1 className="text-5xl font-black">Criar notícia</h1>
 
-        <p className="mt-6 text-zinc-400">
-          Em breve algo será criado aqui
-        </p>
+       <CreateNewsForm />
       </div>
     </main>
   );
