@@ -35,7 +35,7 @@ export default async function AdminPage() {
     {
       title: "Cash Shop",
       description: "Manipular loja de Cash, valores, quantidades...",
-      href: "/admin/",
+      href: "/admin/cash-shop/create",
       action: "Nova notícia",
     },
     {
@@ -47,7 +47,7 @@ export default async function AdminPage() {
     {
       title: "Registro de Compras",
       description: "Visualizar pedidos de cash.",
-      href: "/admin/cash-shop",
+      href: "/admin",
       action: "Gerenciar cash",
     },
   ];

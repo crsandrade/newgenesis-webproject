@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { CreateCashPackageForm } from "./CreateCashPackageForm";
 
 export const metadata: Metadata = {
@@ -13,9 +14,11 @@ export default function CreateCashPackagePage() {
           Admin
         </p>
 
-        <h1 className="text-5xl font-black">Criar pacote de cash</h1>
+        <h1 className="text-5xl font-black">
+          Criar pacote de cash
+        </h1>
 
-       <CreateCashPackageForm />
+        <CreateCashPackageForm />
       </div>
     </main>
   );
