@@ -33,9 +33,9 @@ export default async function AdminPage() {
       action: "Gerenciar notícias",
     },
     {
-      title: "Criar notícia",
-      description: "Adicionar uma nova notícia ao portal.",
-      href: "/admin/news/create",
+      title: "Cash Shop",
+      description: "Manipular loja de Cash, valores, quantidades...",
+      href: "/admin/",
       action: "Nova notícia",
     },
     {
@@ -45,8 +45,8 @@ export default async function AdminPage() {
       action: "Gerenciar usuários",
     },
     {
-      title: "Cash Shop",
-      description: "Visualizar pedidos de cash e futuras integrações.",
+      title: "Registro de Compras",
+      description: "Visualizar pedidos de cash.",
       href: "/admin/cash-shop",
       action: "Gerenciar cash",
     },
