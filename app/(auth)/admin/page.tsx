@@ -1,73 +1,108 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Gerenciar Notícias",
+  title: "Admin",
 };
 
-export default async function AdminNewsPage() {
+export default async function AdminPage() {
   const supabase = await createClient();
 
-  const { data: news } = await supabase
-    .from("news")
-    .select("id, title, category, slug, is_published, created_at")
-    .order("created_at", { ascending: false });
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) redirect("/login");
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role, username")
+    .eq("id", user.id)
+    .single();
+
+  if (!profile || profile.role !== "admin") redirect("/account");
+
+  const cards = [
+    {
+      title: "Notícias",
+      description: "Criar, listar e gerenciar notícias do site.",
+      href: "/admin/news",
+      action: "Gerenciar notícias",
+    },
+    {
+      title: "Criar notícia",
+      description: "Adicionar uma nova notícia ao portal.",
+      href: "/admin/news/create",
+      action: "Nova notícia",
+    },
+    {
+      title: "Usuários",
+      description: "Gerenciar contas, cargos, banimentos e perfis.",
+      href: "/admin/users",
+      action: "Gerenciar usuários",
+    },
+    {
+      title: "Cash Shop",
+      description: "Visualizar pedidos de cash e futuras integrações.",
+      href: "/admin/cash-shop",
+      action: "Gerenciar cash",
+    },
+  ];
 
   return (
     <main className="min-h-screen px-6 py-20 text-white">
+
       <div className="mx-auto max-w-7xl">
-        <div className="flex items-center justify-between gap-6">
-          <div>
+        <div className="flex">
+          <div className="flex flex-col">
+
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.4em] text-red-400">
-              Admin
+              Admin Panel
             </p>
 
-            <h1 className="text-5xl font-black">Gerenciar Notícias</h1>
+            <h1 className="text-5xl font-black">
+              Bem-vindo, {profile.username}
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-zinc-400">
+              Gerencie o conteúdo, usuários e sistemas principais do New Genesis.
+            </p>
+
+
           </div>
 
-          <Link
-            href="/admin/news/create"
-            className="rounded-xl bg-amber-400 px-5 py-3 font-bold text-black transition hover:bg-amber-300"
-          >
-            Nova notícia
-          </Link>
+          <div className="ml-auto">
+
+            <Link
+              href="/account"
+              className="rounded-xl bg-amber-400 px-5 py-3 text-center font-bold text-black transition hover:bg-amber-300"
+            >
+              Voltar
+            </Link>
+          </div>
         </div>
 
-        <div className="mt-12 overflow-hidden rounded-3xl border border-white/10">
-          {news && news.length > 0 ? (
-            <div className="divide-y divide-white/10">
-              {news.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex flex-col gap-4 bg-white/[0.03] p-6 md:flex-row md:items-center md:justify-between"
-                >
-                  <div>
-                    <p className="text-sm font-bold uppercase tracking-[0.25em] text-amber-300">
-                      {item.category}
-                    </p>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {cards.map((card) => (
+            <Link
+              key={card.href}
+              href={card.href}
+              className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:-translate-y-1 hover:border-amber-300/40 hover:bg-white/[0.06]"
+            >
+              <h2 className="text-2xl font-black">{card.title}</h2>
 
-                    <h2 className="mt-2 text-2xl font-black">
-                      {item.title}
-                    </h2>
+              <p className="mt-4 leading-7 text-zinc-400">
+                {card.description}
+              </p>
 
-                    <p className="mt-2 text-sm text-zinc-500">
-                      /news/{item.slug}
-                    </p>
-                  </div>
-
-                  <span className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-300">
-                    {item.is_published ? "Publicado" : "Rascunho"}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="bg-white/[0.03] p-8 text-zinc-400">
-              Nenhuma notícia cadastrada ainda.
-            </div>
-          )}
+              <span className="mt-8 inline-block font-bold text-amber-300">
+                {card.action} →
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     </main>
