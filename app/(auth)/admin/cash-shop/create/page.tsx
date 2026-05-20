@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CreateCashPackageForm } from "./CreateCashPackageForm";
 
 export const metadata: Metadata = {
   title: "Criar Pacote de Cash",
@@ -14,9 +15,7 @@ export default function CreateCashPackagePage() {
 
         <h1 className="text-5xl font-black">Criar pacote de cash</h1>
 
-        <p className="mt-6 text-zinc-400">
-          Na próxima etapa vamos criar o formulário com os campos Cod, Ef1, Efv1, Ef2, Efv2, Ef3 e Efv3.
-        </p>
+       <CreateCashPackageForm />
       </div>
     </main>
   );
