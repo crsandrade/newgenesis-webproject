@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "./LogoutButton";
@@ -100,6 +101,27 @@ export default async function AccountPage() {
                         </div>
                     </div>
                 </div>
+
+                {profile?.role === "admin" && (
+                    <div className="mt-8 rounded-3xl border border-red-400/20 bg-red-500/5 p-8">
+                        <p className="text-sm font-bold uppercase tracking-[0.25em] text-red-400">
+                            Administração
+                        </p>
+
+                        <h2 className="mt-3 text-2xl font-black">Painel administrativo</h2>
+
+                        <p className="mt-4 text-zinc-400">
+                            Acesse as ferramentas de administração do site.
+                        </p>
+
+                        <Link
+                            href="/admin"
+                            className="mt-6 inline-block rounded-xl bg-red-500 px-5 py-3 font-bold text-white transition hover:bg-red-400"
+                        >
+                            Acessar Admin
+                        </Link>
+                    </div>
+                )}
             </div>
         </main>
     );
