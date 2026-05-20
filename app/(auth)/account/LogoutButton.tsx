@@ -19,7 +19,7 @@ export function LogoutButton() {
   return (
     <button
       onClick={handleLogout}
-      className="rounded-xl border border-red-400/30 bg-red-500/10 px-5 py-3 font-bold text-red-300 transition hover:bg-red-500/20"
+      className="rounded-xl border border-red-400/30 bg-red-500/10 px-5 py-3 font-bold text-red-300 transition hover:bg-red-500/20 cursor-pointer"
     >
       Sair da conta
     </button>
