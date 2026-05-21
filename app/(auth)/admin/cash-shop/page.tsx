@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import { createClient } from "@/lib/supabase/server";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Cash Shop",
   description: "Compre Cash para New Genesis",

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { createClient } from "@/lib/supabase/client";
-import { PrimaryButton } from "@/components/PrimaryButton";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Gerenciar Notícias",

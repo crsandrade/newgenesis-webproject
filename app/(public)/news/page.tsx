@@ -4,6 +4,8 @@ import { news } from "@/data/news";
 import { formatDate } from "@/lib/format-date";
 import { Card } from "@/components/Card";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Notícias | New Genesis",
   description: "Notícias New Genesis - Saiba sobre tudo que acontece no jogo."
