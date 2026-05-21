@@ -32,7 +32,7 @@ export default async function AdminNewsPage() {
               Voltar
             </Link>
             <Link
-              href="/admin/news/create"
+              href="/admin/create"
               className="rounded-xl bg-amber-400 px-5 py-3 font-bold text-black transition hover:bg-amber-300"
             >
               Nova notícia
