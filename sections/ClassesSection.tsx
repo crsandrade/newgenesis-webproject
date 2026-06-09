@@ -1,24 +1,30 @@
+import Image from "next/image";
+
 const classes = [
   {
     name: "TransKnight",
+    image: "/images/classes/tk.png",
     role: "Tanque / Corpo a corpo",
     description:
       "Um combatente disciplinado, que jurou proteger os mais fracos.",
   },
   {
     name: "BeastMaster",
+    image: "/images/classes/bm.png",
     role: "Tanque / Utilidade",
     description:
       "Guerreiro da natureza, pode evocar espíritos para ajuda-lo.",
   },
   {
     name: "Foema",
+    image: "/images/classes/fm.png",
     role: "Suporte / Magia",
     description:
       "Estudante das artes divinas da magia.",
   },
    {
     name: "Huntress",
+    image: "/images/classes/ht.png",
     role: "Ataque Explosivo / Distância",
     description:
       "Perseguidora esguia com alta capacidade de sobrevivência.",
@@ -50,7 +56,17 @@ export function ClassesSection() {
               key={item.name}
               className="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-8 transition hover:-translate-y-2 hover:border-amber-300/50"
             >
-              <div className="mb-6 h-40 rounded-2xl border border-white/10 bg-black/40" />
+              <div className="mb-6 overflow-hidden rounded-2xl border border-white/10">
+              <Image
+                src={item.image}
+                alt={item.name}
+                width={300}
+                height={300}
+                className="h-[330px] w-full object-cover object-top transition duration-300 group-hover:scale-105"
+                />          
+                
+                  
+              </div>
 
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-amber-300">
                 {item.role}
