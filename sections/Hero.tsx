@@ -1,6 +1,7 @@
 import { Container } from "@/components/Container";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -26,9 +27,14 @@ export function Hero() {
               enquanto desafia poderes ancetrais, encontre runas e mude
               o destino do continente.
             </p>
-             <div className="mt-8 flex flex-col gap-4 sm:flex-row md:mt-10">
-              <PrimaryButton>Criar Conta</PrimaryButton>
-              <SecondaryButton>Download</SecondaryButton>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row md:mt-10">
+              <Link href="/register" className="rounded-xl bg-amber-400 px-5 py-3 text-center font-bold text-black transition hover:bg-amber-300">
+                Criar Conta
+              </Link>
+              <Link href="/download" className="rounded-xl bg-amber-400 px-5 py-3 text-center font-bold text-black transition hover:bg-amber-300">
+                Download
+              </Link>
             </div>
 
           </div>
