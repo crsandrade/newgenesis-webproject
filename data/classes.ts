@@ -2,30 +2,69 @@ import type { GameClass } from "@/types/class";
 
 export const classes:GameClass[] = [
   {
-    id: "guerreiro-imperial",
-    name: "Guerreiro Imperial",
+    id: "tk",
+    name: "TransKnight",
     role: "Tanque / Corpo a corpo",
     difficulty: "Fácil",
-    image: "/images/classes/imperial-warrior.png",
+    image: "/images/classes/tk.png",
     description:
-      "Treinado nas legiões imperiais, é ideal para quem gosta de resistência, escudo e combate direto.",
+      "Um combatente disciplinado, que jurou proteger os mais fracos.",
   },
   {
-    id: "berserker-nordico",
-    name: "Berserker Nórdico",
-    role: "Dano físico / Fúria",
+    id: "bm",
+    name: "BeastMaster",
+    role: "Dano físico / Suporte / Fúria",
     difficulty: "Médio",
-    image: "/images/classes/imperial-warrior.png",
+    image: "/images/classes/bm.png",
     description:
-      "Um guerreiro agressivo que causa alto dano corpo a corpo, sacrificando defesa por poder ofensivo.",
+      "Estudante das artes divinas da magia.",
   },
   {
-    id: "oraculo-runico",
-    name: "Oráculo Rúnico",
+    id: "fm",
+    name: "Foema",
     role: "Suporte / Magia",
     difficulty: "Difícil",
-    image: "/images/classes/imperial-warrior.png",
+    image: "/images/classes/fm.png",
     description:
       "Manipula runas antigas para curar aliados, aplicar efeitos negativos e controlar o ritmo das batalhas.",
+  },
+  {id: "ht",
+    name: "Huntress",
+    role: "Ataque a Distância / Ataque Explosivo ",
+    difficulty: "Difícil",
+    image: "/images/classes/ht.png",
+    description:
+      "Perseguidora esguia com alta capacidade de sobrevivência.",
+  }
+];
+
+[
+  {
+    name: "TransKnight",
+    image: "/images/classes/tk.png",
+    role: "Tanque / Corpo a corpo",
+    description:
+      "Um combatente disciplinado, que jurou proteger os mais fracos.",
+  },
+  {
+    name: "BeastMaster",
+    image: "/images/classes/bm.png",
+    role: "Tanque / Utilidade",
+    description:
+      "Guerreiro da natureza, pode evocar espíritos para ajuda-lo.",
+  },
+  {
+    name: "Foema",
+    image: "/images/classes/fm.png",
+    role: "Suporte / Magia",
+    description:
+      "Estudante das artes divinas da magia.",
+  },
+   {
+    name: "Huntress",
+    image: "/images/classes/ht.png",
+    role: "Ataque Explosivo / Distância",
+    description:
+      "Perseguidora esguia com alta capacidade de sobrevivência.",
   },
 ];
